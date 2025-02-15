@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
+  constructor( private router: Router) {}
 
   ngAfterViewInit() {
     const container = document.getElementById('container') as HTMLElement;
@@ -21,5 +24,10 @@ export class LoginComponent {
         container.classList.remove("active");
       });
     }
+  }
+
+  goToHome()
+  {
+    this.router.navigate(['/home']);
   }
 }

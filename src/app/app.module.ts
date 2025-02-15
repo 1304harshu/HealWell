@@ -11,6 +11,9 @@ import { PrescriptionListComponent } from './prescription-list/prescription-list
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AptformComponent } from './aptform/aptform.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { AptformComponent } from './aptform/aptform.component';
     PrescriptionListComponent,
     HomeComponent,
     AppointmentComponent,
-    AptformComponent
+    AptformComponent,
+    HeaderComponent,
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
