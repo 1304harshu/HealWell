@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Request Form</title>
+</head>
+<body>
+
+    <div class="appointment-form">
+        <h2>Doctor Appointment Request Form</h2>
+        <p>Fill the form below and we will get back to you for confirmation.</p>
+        
+        <form id="appointmentForm">
+            <label>Patients Name:</label>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+
+            <!-- DOB Selection -->
+<label>Date of Birth:</label>
+<div class="dob-container">
+  <select id="dob-day">
+    <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+  </select>
+  <select id="dob-month">
+    <option *ngFor="let month of months; let i = index" [value]="i+1">{{ month }}</option>
+  </select>
+  <select id="dob-year">
+    <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+  </select>
+</div>
+
+            <label>Gender:</label>
+            <select required>
+                <option value="">Please Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <label>Phone Number:</label>
+            <input type="tel" placeholder="(000) 000-0000" required>
+
+            <label>Email:</label>
+            <input type="email" placeholder="ex: myname@example.com" required>
+
+            <label>Address:</label>
+            <input type="text" placeholder="Street Address" required>
+            <input type="text" placeholder="Street Address Line 2">
+            <input type="text" placeholder="City" required>
+            <input type="text" placeholder="State / Province" required>
+            <input type="text" placeholder="Postal / Zip Code" required>
+
+            <label for="appointment-procedure">Which procedure do you want to make an appointment for?</label>
+            <select id="appointment-procedure" required>
+                <option value="" disabled selected>Please Select</option>
+                <option value="cardiologist">Dr. Priya Verma (Cardiologist)</option>
+                <option value="neurologist">Dr. Arun Mehta (Neurologist)</option>
+                <option value="gastroenterologist">Dr. Vishal Patel (Gastroenterologist)</option>
+                <option value="gynecologist">Dr. Anjali Rao (Gynecologist)</option>
+            </select>
+
+            <label>Preferred Appointment Date:</label>
+            <input type="date" id="appointment-date" required>
+
+            <label>Available Time Slots:</label>
+            <!-- Time Slot Selection -->
+<label>Available Time Slots:</label>
+<div class="time-slots">
+  <button *ngFor="let time of ['19:30', '20:00', '20:30', '21:00', '21:30', '22:00']"
+          [class.active]="selectedTime === time"
+          (click)="selectTime(time)">
+    {{ time }}
+  </button>
+</div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

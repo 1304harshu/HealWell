@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.appointment-form {
+    width: 50%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.time-slots {
+    display: flex;
+    gap: 10px;
+}
+
+.time-slots button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+}
+
+.time-slots button.active {
+    background: #218838;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.dob-container {
+    display: flex;
+    gap: 10px;
+}
+
+.dob-container input {
+    width: 60px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
