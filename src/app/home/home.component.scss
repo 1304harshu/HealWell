@@ -812,33 +812,7 @@
 
 
 
-/* section 6 fotter */
-/* Footer Styles */
-.footer {
-    background-color: #062d22;
-    color: #fff;
-    padding: 20px 10px;
-    font-size: 0.9rem;
-    height: 507px;
-    position: relative;
-    bottom: 67vh;
-    position: relative;
-    bottom: 67vh;
-}
 
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
 .brand h2.logo {
     margin: 0;
@@ -881,38 +855,6 @@
     background-color: #218838;
 }
 
-/* Bottom Footer */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.footer-section h4 {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin: 8px 0;
-}
-
-.footer-section ul li a {
-    text-decoration: none;
-    color: #bbb;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #fff;
-}
 
 .contact p {
     margin: 5px 0;

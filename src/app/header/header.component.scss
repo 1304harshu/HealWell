@@ -1,0 +1,220 @@
+.headers {
+    padding-left: 7px;
+    background: #292929;
+    color: #fff;
+}
+
+.comcast-logo {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.matbuttonCustom {
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.user-icon {
+    // background: url("../../../assets/images/menu_profile.svg") center no-repeat;
+    width: 46px;
+    height: 46px;
+    background-size: cover !important;
+    margin-left: 10px;
+    float: right;
+}
+
+.userInfo {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    color: #fff;
+
+    .down-arrow {
+        opacity: 0.7
+    }
+
+    .profile-img {
+        width: 40px;
+        height: auto;
+        border-radius: 50%;
+        //display: none;
+    }
+
+    .profile-name {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        // font-family: $themeFont;
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        color: #0089cf;
+    }
+
+    .user-title-block {
+        @media only screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .user-title {
+        font-size: 14px;
+        line-height: 16px;
+
+        small {
+            text-transform: capitalize;
+            font-weight: 400;
+            opacity: 0.9;
+            white-space: nowrap;
+            font-size: 11px;
+        }
+    }
+}
+
+.logo-h1 {
+    font-family: 'XfinitySansXLight';
+    font-weight: 100;
+    margin: 0;
+    font-size: 2em;
+}
+
+@media (max-width: 575.98px) {
+    .logo-h1 span {
+        display: none;
+    }
+}
+
+#container>div {
+    display: inline-block;
+}
+
+@media (min-width: 1700px) {
+    .mat-icon-button {
+        width: 3vw;
+        height: 3vw;
+        line-height: 3vw;
+        line-height: 1.5vw;
+    }
+
+    .mat-icon-button .mat-icon {
+        height: 1.5vw;
+        width: 1.9vw;
+        font-size: 1.7vw;
+    }
+
+    .comcast-logo {
+        width: 3.5vw !important;
+        height: 3.5vw !important;
+    }
+
+    .matbuttonCustom {
+        height: 2vw;
+        font-size: 1vw;
+        margin-top: 0.62vw;
+        margin-right: 1.5vw;
+    }
+
+    .switchMenuPanel .mat-form-field {
+        font-size: 0.9vw;
+    }
+
+    .user-icon {
+        width: 3.5vw;
+        height: 3.5vw;
+        margin-left: 0.8vw;
+    }
+
+    .userName,
+    .dropdown-item {
+        font-size: 1.09vw;
+    }
+}
+
+nav {
+    background-color: #026CA2;
+    font-family: "Open Sans", sans-serif;
+    // position: fixed;
+    // top: 70px;
+    // left: 0;
+    // right: 0;
+    // z-index: 10;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            justify-content: space-around;;
+        }
+
+        .active {
+            background-color: #03405F;
+        }
+
+        a {
+            display: flex;
+            color: #d7d7d7;
+            //text-transform: capitalize;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            padding: 8px 12px 9px 12px;
+            align-items: center;
+
+            font {
+                display: inline-block;
+                padding-right: 5px;
+                position: relative;
+                top: 1px;
+                opacity: 0.9;
+
+                mat-icon {
+                    width: auto;
+                    height: auto;
+                    display: block;
+                    font-size: 19px;
+                }
+            }
+
+            &:hover {
+                color: #fff;
+            }
+
+            &.active {
+                color: #fff;
+            }
+        }
+    }
+
+    .menu-list {
+        @media only screen and (max-width: 1057px) {
+            display: none;
+
+            &.active {
+                display: block;
+                border-top: 2px solid #03405F;
+                padding: 10px 0;
+            }
+
+            li {
+                display: block;
+            }
+        }
+
+        // @media only screen and (max-width: 1180px) {
+        //     display: none;
+        // }
+    }
+
+    .mobile-menu {
+        @media only screen and (min-width: 1057px) {
+            display: none;
+        }
+    }
+}

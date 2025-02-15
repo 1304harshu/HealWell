@@ -1,1 +1,115 @@
-<p>header works!</p>
+<!-- <div class="main-nav">
+    <div class="nav-links">
+        <i class="fa-brands fa-x-twitter" style="color: #454545;font-size: 16px; position: relative; left: 10px;"></i>
+        <i class="fa-solid fa-envelope" style="color: #5f5d5d; font-size: 16px; position: relative; left: 10px;"></i>
+        <a href="#home">"&#64;harshu22it.student.ac.in"</a>
+        <i class="fa-solid fa-phone" style="color: #5f5d5d; font-size: 16px; position: relative; left: 10px;"></i>
+        <a href="#appointment">(91) 8877-5533</a>
+        <i class="fa-solid fa-location-dot" style="color: #5f5d5d; font-size: 16px; position: relative; left: 10px;"></i>
+        <a href="#medicines">1234 Malabar Hill Rd, Colaba, Mumbai 400001</a>
+        <div class="social-media">
+            <i class="fa-brands fa-twitter" style="color: #5f5d5d; font-size: 21px; position: relative; left: 10px;"></i>
+            <i class="fa-brands fa-instagram" style="color: #545454; font-size: 21px; position: relative; left: 10px;"></i>
+            <i class="fa-brands fa-facebook-f" style="color: #545454; font-size: 21px; position: relative; left: 10px;"></i>
+            <i class="fa-brands fa-linkedin-in" style="color: #545454; font-size: 21px; position: relative; left: 10px;"></i>
+        </div>
+        
+    </div>
+</div>
+<div class="navbar" id="navbar">
+    <div class="logo">HealWell</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#appointment">Appointments</a>
+        <a href="#medicines">Prescription</a>
+        <a href="#exercise">Exercise</a>
+        <a href="#diet">Diet</a>
+        <a href="#profile">Profile</a>
+    </div>
+</div> -->
+
+<div class="header" style="background: #0089CF;">
+    <div class="row pb-2">
+        <!--Logo-->
+        <div class="col-10 col-md-10 col-lg-8 logo py-2 px-4">
+            <a routerLink="/">
+                <img src="../../../assets/images/janusLogo.png" />
+            </a>
+            HealWell
+        </div>
+
+        <!--User Profile-->
+        <div class="col-2 align-self-end col-md-2 col-lg-4 py-2 px-2">
+            <div class="pr-10 pb-1 userInfo d-flex align-items-center justify-content-end min-heigh-54">
+                <!-- <div class="pl-10 cursor-pointer">
+                    <img src="{{imageToShow}}" class="profile-img" [hidden]="!imageToShow" />
+                    <span [hidden]="imageToShow" class="profile-name">{{userInfo.NTID | slice:0:2}}</span>
+                </div> -->
+                <div class="pl-8 cursor-pointer min-width-125px user-title-block">
+                    <span class="d-block user-title">
+                        <!-- {{userInfo.displayName}} -->
+                    </span>
+                    <mat-menu #userDetails="matMenu" class="header-dropdown">
+                        <ul>
+                            <li nz-menu-item class="cursor-pointer" (click)="logout()">
+                                <a>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-menu>
+                </div>
+                <!-- <div class="down-arrow cursor-pointer" [matMenuTriggerFor]="userDetails"> -->
+                <!-- <div class="down-arrow cursor-pointer" [matMenuTriggerFor]="userDetails">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!--Navigation Bar-->
+    <nav>
+        <div class="container-fluid g-0">
+            
+            <ul class="menu-list" [ngClass]="isMenu ? 'active':''">
+                <!-- <li *ngFor="let item of navigation">
+                <a routerLink="{{item.webLink}}" routerLinkActive="active" class="px-3">
+                    <span>{{item.title}}</span>
+                </a>
+            </li> -->
+                <li>
+                    <a routerLink="home" routerLinkActive="active" class="px-3">Home</a>
+                    <a routerLink="appointment">Appointments</a>
+                    <a routerLink="medicines">Prescription</a>
+                    <a routerLink="exercise">Exercise</a>
+                    <a routerLink="diet">Diet</a>
+                    <a routerLink="profile">Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- <ng-template #callSessionTimeOut>
+    <h2 class="text-black" mat-dialog-title>Session Timeout</h2>
+    <div mat-dialog-content>
+        <h3 class="alert alert-info">You will be logged out in <strong>{{60 - sessionTimeOutTimer}}</strong> seconds!
+        </h3>
+        <h5>Do you want to stay signed in?</h5>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button matDialogClose="Yes" color="primary" type="submit">Yes. Stay signed in!</button>
+    </div>
+</ng-template>
+<ng-template #callWarningTimeOut>
+    <h4 mat-dialog-title class="d-flex justify-content-between align-items-center" style="color: #0D2A46;">
+        <span>Warning of Session Timeout</span>
+        <button mat-icon-button style="top: -15px!important; right: -15px!important;" tabindex="-1" class="close-button-dialog" [mat-dialog-close]="true">
+            <mat-icon class="close-icon-dialog">close</mat-icon>
+        </button>
+    </h4>
+    <div mat-dialog-content>
+        <h3 class="alert alert-info">You will be logged out in next 5 mins, Please Save your Work!!!
+        </h3>
+    </div>
+</ng-template> -->

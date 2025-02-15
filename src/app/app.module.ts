@@ -14,6 +14,8 @@ import { AptformComponent } from './aptform/aptform.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatIconModule,
+    MatMenuModule,
     HttpClientModule
   ],
   providers: [],
