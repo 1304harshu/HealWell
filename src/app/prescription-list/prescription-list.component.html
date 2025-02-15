@@ -5,11 +5,14 @@
       <li *ngFor="let prescription of prescriptions">
         <p>Patient Name: {{ prescription.patientName}}</p>
         <p>Docter Name: {{ prescription.docterName}}</p>
-        <p>Medicine Name:{{ prescription.medicines}}</p>
+        <p>Medicine1 Name:{{ prescription.medicine1}}</p>
+        <p>Schedule: Morning: {{ prescription.schedule.morning ? 'Yes' : 'No' }}</p>
+        <p>Schedule: Morning: {{ prescription.schedule.afternoon ? 'Yes' : 'No' }}</p>
+        <p>Schedule: Morning: {{ prescription.schedule.night ? 'Yes' : 'No' }}</p>
+        <p>Medicine2 Name:{{ prescription.medicine2}}</p>
         <p>Schedule: Morning: {{ prescription.schedule.morning ? 'Yes' : 'No' }}</p>
         <p>Schedule: Morning: {{ prescription.schedule.afternoon ? 'Yes' : 'No' }}</p>
         <p>Schedule: Morning: {{ prescription.schedule.night ? 'Yes' : 'No' }}</p>
       </li>
     </ul>
   </div>
-  

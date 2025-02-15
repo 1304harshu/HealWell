@@ -24,6 +24,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "assets": [
+            "src/favicon.ico",
+            "src/assets"
+          ],
             "outputPath": "dist/heal-well",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -32,12 +36,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+
             "styles": [
               "src/styles.scss"
             ],
@@ -107,3 +106,4 @@
     }
   }
 }
+

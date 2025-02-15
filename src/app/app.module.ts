@@ -8,13 +8,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { PrescriptionFormComponent } from './prescription-form/prescription-form.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { HomeComponent } from './home/home.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PrescriptionFormComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+    HomeComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            font-size: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .meal-plan {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .meal-plan h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .meal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .meal-day {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .meal-day h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .meal-section {
+            margin-bottom: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .meal {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #007bff;
+        }
+
+        .meal-section img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .meal-section p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .meal-day.active {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const days = document.querySelectorAll(".meal-day");
+
+            days.forEach(day => {
+                day.addEventListener("click", () => {
+                    // Close other days
+                    days.forEach(otherDay => {
+                        if (otherDay !== day) {
+                            otherDay.classList.remove("active");
+                            otherDay.querySelectorAll(".meal-section").forEach(section => {
+                                section.style.maxHeight = null;
+                            });
+                        }
+                    });
+
+                    // Toggle current day
+                    const sections = day.querySelectorAll(".meal-section");
+                    const isActive = day.classList.contains("active");
+
+                    day.classList.toggle("active", !isActive);
+                    sections.forEach(section => {
+                        if (!isActive) {
+                            section.style.maxHeight = section.scrollHeight + "px";
+                        } else {
+                            section.style.maxHeight = null;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>HEALWELL</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Medication</a></li>
+                <li><a href="#">Exercise</a></li>
+                <li><a href="#">Diet</a></li>
+                <li><a href="#">Care Plan</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="meal-plan">
+        <h2>Let’s Plan Your Meal ...</h2>
+        <div class="meal-grid">
+            <div class="meal-day">
+                <h3>Monday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <h4>Baked Eggs</h4>
+                    <img src="food1.jpg" alt="Meal">
+                    <p>2 meals</p>
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>2 meals</p><br>
+                    <img src="food2.jpg" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Tuesday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="food4.PNG" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Wednesday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="food4.PNG" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>2 meals</p><br>
+                    <img src="food5.jpg" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Thursday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="food6.jpg" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Friday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Saturday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>1 meal</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+            </div>
+            <div class="meal-day">
+                <h3>Sunday</h3>
+                <div class="meal-section">
+                    <h4 class="meal">Breakfast</h4>
+                    <p>2 meals</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+                <div class="meal-section">
+                    <h4 class="meal">Lunch</h4>
+                    <p>1 meal</p><br>
+                    <img src="https://via.placeholder.com/150" alt="Meal">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

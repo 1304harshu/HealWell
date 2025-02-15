@@ -13,7 +13,8 @@ export class PrescriptionFormComponent {
     phoneNumber: '',
     docterName:'',
     address: '',
-    medicines: '',
+    medicine1: '',
+    medicine2: '',
     schedule: { morning: false, afternoon: false, night: false },
   };
 

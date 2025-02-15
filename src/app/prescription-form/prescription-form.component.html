@@ -10,8 +10,15 @@
       <input id="docterName" [(ngModel)]="prescription.docterName" name="docterName" required />
       <label for="address">Address:</label>
       <textarea id="address" [(ngModel)]="prescription.address" name="address"></textarea>
-      <label for="medicines">Medicines:</label>
-      <input id="medicines" [(ngModel)]="prescription.medicines" name="medicines" />
+      <label for="medicine1">Medicine 1:</label>
+      <input id="medicine1" [(ngModel)]="prescription.medicine1" name="medicine1" />
+      <div>
+        <label><input type="checkbox" [(ngModel)]="prescription.schedule.morning" name="morning" /> Morning</label>
+        <label><input type="checkbox" [(ngModel)]="prescription.schedule.afternoon" name="afternoon" /> Afternoon</label>
+        <label><input type="checkbox" [(ngModel)]="prescription.schedule.night" name="night" /> Night</label>
+      </div>
+      <label for="medicine2">Medicine 2:</label>
+      <input id="medicine2" [(ngModel)]="prescription.medicine2" name="medicine2" />
       <div>
         <label><input type="checkbox" [(ngModel)]="prescription.schedule.morning" name="morning" /> Morning</label>
         <label><input type="checkbox" [(ngModel)]="prescription.schedule.afternoon" name="afternoon" /> Afternoon</label>
