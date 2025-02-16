@@ -22,6 +22,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { ExcerciseComponent } from './excercise/excercise.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MedicineComponent } from './medicine/medicine.component';
+
 
 @NgModule({
   declarations: [
@@ -37,9 +40,12 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardComponent,
     MealComponent,
     ExcerciseComponent,
-    ProfileComponent
+    ProfileComponent,
+    MedicineComponent
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
