@@ -1,67 +1,38 @@
- 
-  <div class="prescripto-homepage">
-    <div class="div">
-      <div class="overlap">
-        <div class="rectangle"></div>
-        <div class="book-botton"></div>
-        <div class="text-wrapper">Book appointment</div>
-        <div class="group">
-          <p class="simply-browse">
-            Simply browse through our extensive list of trusted doctors, <br />schedule your appointment hassle-free.
-          </p>
-          <img class="group-profiles" src="assets/aptimg/group_profiles.png" />
-        </div>
+<div class="prescripto-homepage">
+  <div class="div">
+    <div class="overlap">
+      <div class="rectangle">
         <img class="doc-header-img" src="assets/aptimg/header_img.png" />
-        <p class="book-appointment">Book Appointment <br />With Trusted Doctors</p>
-        <img class="arrow-icon" src="assets/aptimg/arrow-icon.svg" />
       </div>
-      <p class="p">
-        Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.
-      </p>
-      <div class="categories">
-        <button *ngFor="let category of doctorsData | keyvalue" 
-                class="category-btn" 
-                [class.active]="selectedCategory === category.key"
-                (click)="filterDoctors(category.key)">
-          {{ category.key }}
-        </button>
+      <button class="book-botton" (click)="scrollToSection()">Book appointment</button>
+      <div class="group">
+        <p class="simply-browse">
+          Simply browse through our extensive list of trusted doctors, <br />schedule your appointment hassle-free.
+        </p>
+        <img class="group-profiles" src="assets/aptimg/group_profiles.png" />
       </div>
-      
-      <div class="doctor-container">
-        <div *ngFor="let doctor of doctorsData[selectedCategory]" class="doctor-card">
-          <img [src]="doctor.image" [alt]="doctor.name">
-          <div class="doctor-info">
-            <h3>{{ doctor.name }}</h3>
-            <p>{{ doctor.specialty }}</p>
-          </div>
+      <p class="book-appointment">Book Appointment <br />With Trusted Doctors</p>
+      <img class="arrow-icon" src="assets/aptimg/arrow-icon.svg" />
+    </div>
+    <h1 class="specialty">Find By Speciality</h1>
+    <p class="p">
+      Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.
+    </p>
+    <div class="categories">
+      <button *ngFor="let category of doctorsData | keyvalue" class="category-btn"
+        [class.active]="selectedCategory === category.key" (click)="filterDoctors(category.key)">
+        {{ category.key }}
+      </button>
+    </div>
+
+    <div class="doctor-container" id="bookingSection">
+      <div *ngFor="let doctor of doctorsData[selectedCategory]" class="doctor-card">
+        <img [src]="doctor.image" [alt]="doctor.name">
+        <div class="doctor-info">
+          <h3>{{ doctor.name }}</h3>
+          <p>{{ doctor.specialty }}</p>
         </div>
       </div>
-
-
-      <div class="text-wrapper-4">Find by Speciality</div>
-      <div class="overlap-2">
-        <div class="rectangle-3"></div>
-        <img class="appointment-doc-img" src="assets/aptimg/appointment_img.png" />
-        <p class="book-appointment-2">Book Appointment <br />With 100+ Trusted Doctors</p>
-      </div>
-
-      <div class="Copyright">
-      <p class="lorem-ipsum-is">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-        <div class="text-wrapper-30">COMPANY</div>
-        <div class="text-wrapper-31">Home</div>
-        <p class="text-wrapper-32">Copyright © 2024 GreatStack - All Right Reserved.</p>
-        <div class="text-wrapper-33">+1-212-456-7890</div>
-        <div class="text-wrapper-34">greatstackdev"&#64;"gmail.com</div>
-        <div class="text-wrapper-35">About us</div>
-        <div class="text-wrapper-36">Contact us</div>
-        <div class="text-wrapper-37">Privacy policy</div>
-        <div class="text-wrapper-38">GET IN TOUCH</div>
-        <img class="line" src="assets/aptimg/line-2.svg" />
-      </div>
-
     </div>
   </div>
+</div>

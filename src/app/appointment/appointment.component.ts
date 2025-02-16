@@ -47,4 +47,12 @@ export class AppointmentComponent {
   filterDoctors(category: string) {
     this.selectedCategory = category;
   }
+
+  scrollToSection() {
+    const element = document.getElementById("bookingSection");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+  
 }
