@@ -1,9 +1,20 @@
 import { Component } from '@angular/core';
-
+import { trigger, transition, style, animate } from '@angular/animations';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  styleUrl: './profile.component.scss',
+  animations: [
+    trigger('fadeSlide', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-10px)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({ opacity: 0, transform: 'translateY(10px)' })),
+      ])
+    ])
+  ]
 })
 export class ProfileComponent {
   activeTab: string = 'personal-info'; // Default tab
@@ -11,7 +22,7 @@ export class ProfileComponent {
   patient = {
     name: 'Brendon Rogers',
     diagnosis: 'Coronary atherosclerosis - Latest diagnosis',
-    image: 'assets/brendon.jpg', // Update this with the correct image path
+    image: 'assets/brendon.jpg',
     personalInfo: [
       { label: 'Sex', value: 'Female' },
       { label: 'Age', value: '28' },
