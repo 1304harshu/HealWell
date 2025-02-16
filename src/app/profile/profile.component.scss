@@ -1,0 +1,91 @@
+.patient-profile {
+    background-color: #fdeeee;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 5px grey;
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .profile-details h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .profile-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .tab-btn {
+    background: white;
+    border: 1px solid black;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .tab-btn.active {
+    background: black;
+    color: white;
+  }
+  
+  /* Content Sections */
+  .section-title {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Info Grid (4 columns) */
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px grey;
+  }
+  
+  .info-box {
+    text-align: left;
+  }
+  
+  .label {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .value {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  

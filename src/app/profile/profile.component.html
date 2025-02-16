@@ -1,0 +1,66 @@
+<div class="patient-profile">
+    <!-- Patient Header -->
+    <div class="profile-header">
+      <img [src]="patient.image" alt="Patient Image" class="profile-img">
+      <div class="profile-details">
+        <h2>{{ patient.name }}</h2>
+        <p>{{ patient.diagnosis }}</p>
+      </div>
+    </div>
+  
+    <!-- Tabs -->
+    <div class="tabs">
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab === 'personal-info'" 
+        (click)="setActiveTab('personal-info')">
+        Personal Information
+      </button>
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab === 'visits'" 
+        (click)="setActiveTab('visits')">
+        Visits
+      </button>
+      <button 
+        class="tab-btn" 
+        [class.active]="activeTab === 'lab-reports'" 
+        (click)="setActiveTab('lab-reports')">
+        Lab Reports
+      </button>
+    </div>
+  
+    <!-- Content Based on Active Tab -->
+    <div *ngIf="activeTab === 'personal-info'">
+      <h3 class="section-title">GENERAL INFORMATION</h3>
+      <div class="info-container">
+        <div *ngFor="let item of patient.personalInfo" class="info-box">
+          <p class="label">{{ item.label }}</p>
+          <p class="value">{{ item.value }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="activeTab === 'visits'">
+      <h3 class="section-title">VISIT HISTORY</h3>
+      <div class="info-container">
+        <div *ngFor="let visit of patient.visits" class="info-box">
+          <p class="label">Date: {{ visit.date }}</p>
+          <p class="value">Doctor: {{ visit.doctor }}</p>
+          <p class="label">Notes: {{ visit.notes }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="activeTab === 'lab-reports'">
+      <h3 class="section-title">LAB REPORTS</h3>
+      <div class="info-container">
+        <div *ngFor="let report of patient.labReports" class="info-box">
+          <p class="label">Test: {{ report.test }}</p>
+          <p class="value">Result: {{ report.result }}</p>
+          <p class="label">Date: {{ report.date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
