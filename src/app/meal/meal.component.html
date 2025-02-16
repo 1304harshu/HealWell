@@ -1,0 +1,22 @@
+<div class="meal-planner">
+    <h1>Let's Plan Your Meal...</h1>
+  
+    <div class="toggle-buttons">
+      <button (click)="setMealType('vegetarian')" class="meal-btn">Vegetarian</button>
+      <button (click)="setMealType('non-vegetarian')" class="meal-btn">Non-Vegetarian</button>
+    </div>
+  
+    <div class="week-container">
+      <div *ngFor="let day of days">
+        <button class="daybtn" (click)="toggleMeals(day)">{{ day }}</button>
+  
+        <div [class.show]="activeDay === day" class="meals">
+          <div *ngFor="let meal of meals" class="meal">
+            <h3>{{ meal.name }}</h3>
+            <img [src]="getMealImage(meal)" alt="{{ meal.name }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
