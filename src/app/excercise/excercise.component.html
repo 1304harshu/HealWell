@@ -1,0 +1,70 @@
+<div class="main-nav">
+    <div class="nav-links">
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:harshu22it.student.ac.in">&#64;harshu22it.student.ac.in</a>
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+9188775533">(91) 8877-5533</a>
+      <i class="fa-solid fa-location-dot"></i>
+      <a href="#">1234 Malabar Hill Rd, Colaba, Mumbai 400001</a>
+    </div>
+  
+    <div class="social-media">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+    </div>
+  </div>
+  
+  <nav class="navbar" id="navbar">
+    <div class="logo">HealWell</div>
+    <div class="nav-links">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/appointments">Appointments</a>
+      <a routerLink="/medicines">Prescription</a>
+      <a routerLink="/exercise">Exercise</a>
+      <a routerLink="/diet">Diet</a>
+      <a routerLink="/profile">Profile</a>
+    </div>
+  </nav>
+  
+<div class="container">
+    <aside class="sidebar">
+        <h3>Workouts For</h3>
+        <label *ngFor="let type of workoutForCategories">
+          <input type="checkbox" [(ngModel)]="type.selected" (change)="filterWorkouts()">
+          {{ type.name }}
+        </label>
+
+        <h3>Workout Type</h3>
+        <label *ngFor="let type of workoutTypes">
+          <input type="checkbox" [(ngModel)]="type.selected" (change)="filterWorkouts()">
+          {{ type.name }}
+        </label>
+        
+        <h3>Difficulty Level</h3>
+        <label *ngFor="let level of difficultyLevels">
+          <input type="checkbox" [(ngModel)]="level.selected" (change)="filterWorkouts()">
+          {{ level.name }}
+        </label>
+        
+    </aside>
+  
+    <div class="workout-section">
+      <h2>{{ filteredWorkouts.length }} workouts for you</h2>
+      <div class="workout-grid">
+        <div *ngFor="let workout of filteredWorkouts" class="workout-card" (click)="openVideo(workout.videoUrl)">
+          <img [src]="workout.image" alt="{{ workout.title }}">
+          <div class="badge">{{ workout.level }}</div>
+          <h3>{{ workout.title }}</h3>
+          <p>{{ workout.trainer }} • {{ workout.duration }} mins</p>
+          <div class="equipment">
+            <span *ngFor="let item of workout.equipment">{{ item }}</span>
+          </div>
+          <div class="rating">⭐ {{ workout.rating }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
