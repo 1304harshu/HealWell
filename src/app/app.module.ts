@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { ExcerciseComponent } from './excercise/excercise.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ExcerciseComponent } from './excercise/excercise.component';
     FooterComponent,
     DashboardComponent,
     MealComponent,
-    ExcerciseComponent
+    ExcerciseComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
