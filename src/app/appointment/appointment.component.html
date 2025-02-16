@@ -28,7 +28,7 @@
     <div class="doctor-container" id="bookingSection">
       <div *ngFor="let doctor of doctorsData[selectedCategory]" class="doctor-card">
         <img [src]="doctor.image" [alt]="doctor.name">
-        <div class="doctor-info">
+        <div class="doctor-info" (click)="callform()">
           <h3>{{ doctor.name }}</h3>
           <p>{{ doctor.specialty }}</p>
         </div>

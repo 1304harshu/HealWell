@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 interface Doctor {
   name: string;
   specialty: string;
@@ -40,7 +41,7 @@ export class AppointmentComponent {
       { name: "Dr. Ritu Verma", specialty: "Dietitian", image: "assets/aptimg/doc11.png" }
     ]
   };
-
+ constructor( private router: Router, private authService: AuthService) {}
   selectedCategory: string = "Neck Pain";
 
   // Function to update selected category
@@ -53,6 +54,9 @@ export class AppointmentComponent {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  }
+  callform(){
+    this.router.navigate(['home/aptform']);
   }
   
 }
