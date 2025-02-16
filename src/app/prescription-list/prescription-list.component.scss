@@ -12,7 +12,7 @@
   }
   
   .box .overlap-group {
-    position: relative;
+    // position: relative;
     width: 738px;
     height: 156px;
     background-color: #ffffff;
@@ -219,3 +219,126 @@
   
 
   
+  /* Ensure container has proper spacing */
+.container {
+  padding: 20px;
+  max-width: 100%;
+}
+
+/* Responsive styling for the health status card */
+mat-card {
+  border-radius: 10px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 8px #bdbdbd;
+  margin-bottom: 20px;
+  // padding: 10px;
+}
+
+/* Flexbox for equal column spacing */
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Style individual health metric cards */
+.col-md-3 {
+  flex: 1;
+  min-width: 150px; /* Ensures stacking on small screens */
+  margin: 10px;
+  // padding: 10px;
+  background: #f8f9fa;
+  // border-radius: 8px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+     
+    h5{
+      color: #9d9d9d;
+      margin-left: 1vw;
+    // font-size: 12px;
+    }
+  }
+}
+
+/* Ensure text is readable */
+h6 {
+  font-weight: 600;
+}
+h5{
+  color: #605e5e;
+    // font-size: 12px;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Responsive table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Ensure table fits inside the card */
+mat-card table {
+  overflow-x: auto;
+}
+
+/* Table header styling */
+th {
+  background: #007bff;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Table row styling */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Action button */
+mat-icon {
+  cursor: pointer;
+}
+
+/* Tooltip */
+.mat-tooltip {
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-3 {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Stack table headers vertically */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 576px) {
+  h4 {
+    font-size: 18px;
+  }
+
+  td, th {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

@@ -28,6 +28,6 @@ export class LoginComponent {
 
   goToHome()
   {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home/dashboard']);
   }
 }

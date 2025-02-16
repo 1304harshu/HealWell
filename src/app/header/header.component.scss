@@ -134,7 +134,7 @@
 }
 
 nav {
-    background-color: #026CA2;
+    background-color: #e7eeec;
     font-family: "Open Sans", sans-serif;
     // position: fixed;
     // top: 70px;
@@ -150,21 +150,21 @@ nav {
 
         li {
             display: flex;
-            justify-content: space-around;;
+            justify-content: flex-end;
         }
 
         .active {
-            background-color: #03405F;
+            background-color: #416057;
         }
 
         a {
             display: flex;
-            color: #d7d7d7;
+            color: #5c5c5c;
             //text-transform: capitalize;
             text-decoration: none;
             font-weight: 400;
             font-size: 15px;
-            padding: 8px 12px 9px 12px;
+            padding: 8px 3vw 9px 3vw;
             align-items: center;
 
             font {
@@ -184,10 +184,12 @@ nav {
 
             &:hover {
                 color: #fff;
+                background-color: #405f5687;
             }
 
             &.active {
                 color: #fff;
+                background-color: #416057;;
             }
         }
     }

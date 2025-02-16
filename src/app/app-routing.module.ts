@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/login/login.component';
 import { PrescriptionFormComponent } from './prescription-form/prescription-form.component';
@@ -6,13 +6,22 @@ import { PrescriptionListComponent } from './prescription-list/prescription-list
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { ExcerciseComponent } from './excercise/excercise.component';
+import { MealComponent } from './meal/meal.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: DashboardComponent,
     children:[
-      { path:'', component: HomeComponent}
+      { path:'dashboard', component: HomeComponent },
+      { path: 'appointment', component: AppointmentComponent },
+      { path: 'prescription-list', component: PrescriptionListComponent },
+      { path: 'exercise', component: ExcerciseComponent },
+      { path: 'diet', component: MealComponent },
+      { path: 'profile', component: ProfileComponent }
+
     ]
   },
   { path: 'staff-dashboard', component: PrescriptionFormComponent },
