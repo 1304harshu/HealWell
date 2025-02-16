@@ -54,10 +54,10 @@
             <label for="appointment-procedure">Which procedure do you want to make an appointment for?</label>
             <select id="appointment-procedure" required>
                 <option value="" disabled selected>Please Select</option>
-                <option value="cardiologist">Dr. Priya Verma (Cardiologist)</option>
-                <option value="neurologist">Dr. Arun Mehta (Neurologist)</option>
+                <option *ngFor="let doc of doctorsList" [value]="doc._id">{{doc.name}} ({{doc.specialty}})</option>
+                <!-- <option value="neurologist">Dr. Arun Mehta (Neurologist)</option>
                 <option value="gastroenterologist">Dr. Vishal Patel (Gastroenterologist)</option>
-                <option value="gynecologist">Dr. Anjali Rao (Gynecologist)</option>
+                <option value="gynecologist">Dr. Anjali Rao (Gynecologist)</option> -->
             </select>
 
             <label>Preferred Appointment Date:</label>

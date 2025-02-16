@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppointmentService } from '../shared/appointment.service';
 
 @Component({
   selector: 'app-aptform',
   templateUrl: './aptform.component.html',
   styleUrl: './aptform.component.scss'
 })
-export class AptformComponent {
+export class AptformComponent implements OnInit{
     days: number[] = [];
     months: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     years: number[] = [];
     selectedTime: string = '';
+  doctorsList: any[] = [];
   
-    constructor() {
+    constructor(private aptService: AppointmentService) {
       this.populateDOBFields();
     }
+  ngOnInit(): void {
+
+    this.aptService.getDoctorsList().subscribe((resp)=>{
+      this.doctorsList = resp
+    })
+
+  }
   
     ngAfterViewInit() {
       // Add event listeners to restrict non-numeric input in the DOB fields
