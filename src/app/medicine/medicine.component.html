@@ -1,0 +1,46 @@
+<div class="prescrip_page">
+    <h2 class="title">Prescription Details</h2>
+  </div>
+<div class="prescription-container">
+    <div class="header">
+      <div class="clinic-info">
+        <h3>Ur Fitness</h3>
+        <p>B/13, Devidarshan Society, Thane West</p>
+        <p><strong>+91-9892524200</strong></p>
+      </div>
+      <div class="doctor-info">
+        <h3>Dr. C M PRADHAN</h3>
+        <p>(BHMS) Homeopath</p>
+        <p>MRN: I-3220</p>
+        <p><strong>Contact: +91-8452902998</strong></p>
+      </div>
+    </div>
+  
+    <div class="patient-info">
+      <h3>Name: <strong>HARSH UPADHYAY</strong> ( M, 20 Years )</h3>
+      <p>Date & Time: <strong>08-Feb-2025; 01:13 PM</strong></p>
+      <p><strong>Patient ID:</strong> A493</p>
+    </div>
+  
+    <div class="complaints">
+      <p><strong>CHIEF COMPLAINTS:</strong> K/C/O - RECURRENT RESPIRATORY ALLERGY - RHINITIS - REG. 30-40%, SNEEZING IN SUCCESSION - REG. 40%</p>
+    </div>
+  
+    <table class="prescription-table">
+      <thead>
+        <tr>
+          <th>Sl</th>
+          <th>Medicine Name</th>
+          <th>Regime and Instruction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of medicines; let i = index" @fadeSlide>
+          <td>{{ i + 1 }}</td>
+          <td><strong>{{ medicine.name }}</strong></td>
+          <td>{{ medicine.instructions }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
