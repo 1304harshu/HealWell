@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(credentials: { username: string; password: string; role: string }) {
+  login(credentials: { email: string; password: string; role: string }) {
     return this.http.post<{ token: string }>(`${this.apiURL}/login`, credentials);
   }
 
@@ -22,5 +22,9 @@ export class AuthService {
 
   isLoggedIn() {
     return !!localStorage.getItem('token');
+  }
+
+  registerUser(inputData: { name: any; email: any; password: any; role: any; }){
+    return this.http.post(`${this.apiURL}/register`, inputData)
   }
 }

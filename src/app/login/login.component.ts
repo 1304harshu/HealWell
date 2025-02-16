@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor( private router: Router) {}
+  regName: any
+  regEmail: any
+  regPassword: any
+  regRole: any
+
+  email!: string;
+  password!: string;
+  role!: string;
+
+  isErrorApi: boolean = false
+  errorMsg: any;
+
+  constructor( private router: Router, private authService: AuthService) {}
 
   ngAfterViewInit() {
     const container = document.getElementById('container') as HTMLElement;
@@ -28,6 +41,46 @@ export class LoginComponent {
 
   goToHome()
   {
-    this.router.navigate(['/home/dashboard']);
+    let input ={
+      email: this.email,
+      password: this.password,
+      role: this.role
+    }
+
+    // this.router.navigate(['/home/dashboard']);
+    this.authService.login(input).subscribe(
+      (response: any) => {
+        this.isErrorApi = false
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['home/dashboard']);
+      },
+      (error) => {
+        this.isErrorApi = true;
+        this.errorMsg = error.error.message;
+        console.error('Error:', error);
+      }
+    );
+  }
+
+  registerUser(){
+    let input ={
+      name:this.regName,
+      email: this.regEmail,
+      password: this.regPassword,
+      role: this.regRole
+    }
+
+    this.authService.registerUser(input).subscribe(
+      (response: any) => {
+        this.isErrorApi = false
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['home/dashboard']);
+      },
+      (error: any) => {
+        this.isErrorApi = true
+        this.errorMsg = error.error.message;
+        console.error('Error:', error);
+      }
+    );
   }
 }
