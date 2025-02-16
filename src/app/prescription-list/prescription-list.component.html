@@ -74,17 +74,17 @@
     <h5 class="text-primary">Prescription History</h5>
     <mat-divider></mat-divider>
 
-    <table mat-table [dataSource]="prescriptions" class="table table-hover mt-3">
+    <table mat-table [dataSource]="dataSource" class="table table-hover mt-3">
       <!-- Prescription No -->
       <ng-container matColumnDef="prescriptionNo">
         <th mat-header-cell *matHeaderCellDef> Prescription No </th>
-        <td mat-cell *matCellDef="let prescription"> {{ prescription.prescriptionNo }} </td>
+        <td mat-cell *matCellDef="let prescription"> {{ prescription.prescriptionNumber }} </td>
       </ng-container>
 
       <!-- Date -->
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let prescription"> {{ prescription.date }} </td>
+        <td mat-cell *matCellDef="let prescription"> {{ prescription.startDate }} </td>
       </ng-container>
 
       <!-- Doctor Name -->
@@ -103,7 +103,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let prescription">
-          <button mat-icon-button matTooltip="View Details">
+          <button mat-icon-button matTooltip="View Details" (click)="goToPrescptDetails(prescription)">
             <mat-icon color="primary">visibility</mat-icon>
           </button>
         </td>

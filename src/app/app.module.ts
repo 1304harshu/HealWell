@@ -28,7 +28,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth.interceptor';  // Import Interceptor
 
 @NgModule({
   declarations: [
@@ -55,7 +56,6 @@ import {MatRadioModule} from '@angular/material/radio';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule,
     MatMenuModule,
     HttpClientModule,
     MatExpansionModule,
@@ -68,7 +68,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDividerModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

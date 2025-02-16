@@ -51,7 +51,7 @@ export class LoginComponent {
     this.authService.login(input).subscribe(
       (response: any) => {
         this.isErrorApi = false
-        localStorage.setItem('token', response.token);
+        // localStorage.setItem('userInfo', response);
         this.router.navigate(['home/dashboard']);
       },
       (error) => {
@@ -73,7 +73,7 @@ export class LoginComponent {
     this.authService.registerUser(input).subscribe(
       (response: any) => {
         this.isErrorApi = false
-        localStorage.setItem('token', response.token);
+        // localStorage.setItem('userInfo', response);
         this.router.navigate(['home/dashboard']);
       },
       (error: any) => {

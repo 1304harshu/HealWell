@@ -9,7 +9,7 @@
         <p><strong>+91-9892524200</strong></p>
       </div>
       <div class="doctor-info">
-        <h3>Dr. C M PRADHAN</h3>
+        <h3>{{prescriptionData.doctorName}}</h3>
         <p>(BHMS) Homeopath</p>
         <p>MRN: I-3220</p>
         <p><strong>Contact: +91-8452902998</strong></p>
@@ -17,13 +17,13 @@
     </div>
   
     <div class="patient-info">
-      <h3>Name: <strong>HARSH UPADHYAY</strong> ( M, 20 Years )</h3>
-      <p>Date & Time: <strong>08-Feb-2025; 01:13 PM</strong></p>
-      <p><strong>Patient ID:</strong> A493</p>
+      <h3>Name: <strong>{{prescriptionData.patientName}}</strong></h3>
+      <p>Date & Time: <strong>{{prescriptionData.startDate}}</strong></p>
+      <!-- <p><strong>Patient ID:</strong> A493</p> -->
     </div>
   
     <div class="complaints">
-      <p><strong>CHIEF COMPLAINTS:</strong> K/C/O - RECURRENT RESPIRATORY ALLERGY - RHINITIS - REG. 30-40%, SNEEZING IN SUCCESSION - REG. 40%</p>
+      <p><strong>CHIEF COMPLAINTS:</strong> {{prescriptionData.diagnosis}}</p>
     </div>
   
     <table class="prescription-table">
@@ -36,6 +36,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let medicine of medicines; let i = index" @fadeSlide>
+          <!-- {{medicine|json}} -->
           <td>{{ i + 1 }}</td>
           <td><strong>{{ medicine.name }}</strong></td>
           <td>{{ medicine.instructions }}</td>

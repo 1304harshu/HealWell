@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,19 @@ export class HeaderComponent {
 
   isMenu: boolean = false
 
-  logout(){
-    
+  user: any;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.getUser().subscribe(user => {
+      this.user = user;
+    });
   }
+
+  logout() {
+    this.authService.logout();
+  }
+  
 
 }

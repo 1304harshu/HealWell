@@ -10,6 +10,7 @@ import { ExcerciseComponent } from './excercise/excercise.component';
 import { MealComponent } from './meal/meal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AptformComponent } from './aptform/aptform.component';
+import { MedicineComponent } from './medicine/medicine.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'diet', component: MealComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'aptform', component: AptformComponent },
+      { path: 'prescription-details', component: MedicineComponent }
 
     ]
   },
