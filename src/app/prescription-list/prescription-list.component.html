@@ -1,5 +1,6 @@
 <!-- prescription-list.component.html -->
-<div class="list">
+<!-- <div class="list">
+  
     <h2>My Prescriptions</h2>
     <ul>
       <li *ngFor="let prescription of prescriptions">
@@ -15,4 +16,53 @@
         <p>Schedule: Morning: {{ prescription.schedule.night ? 'Yes' : 'No' }}</p>
       </li>
     </ul>
+  </div> -->
+
+  <div class="box">
+    <div class="group">
+      <div class="overlap-group">
+        <div class="text-wrapper">Blood Pressure</div>
+        <div class="div">In the norm</div>
+        <div class="text-wrapper-2">mm/hg</div>
+        <div class="text-wrapper-3">120/89</div>
+        <div class="text-wrapper-4">Heart Rate</div>
+        <div class="text-wrapper-5">Above the norm</div>
+        <div class="overlap">
+          <div class="text-wrapper-6">BPM</div>
+          <div class="text-wrapper-7">120</div>
+        </div>
+        <div class="text-wrapper-8">Blood Sugar</div>
+        <div class="text-wrapper-9">In the norm</div>
+        <div class="text-wrapper-10">mg/dl</div>
+        <div class="text-wrapper-12">97</div>
+        <div class="text-wrapper-13">Cholesterol</div>
+        <div class="text-wrapper-14">In the norm</div>
+        <div class="text-wrapper-15">85</div>
+      </div>
+    </div>
   </div>
+
+  <table class="prescription-table">
+    <thead>
+      <tr>
+        <th>Prescription_No</th>
+        <th>Date</th>
+        <th>Doctor Name</th>
+        <th>Diagnosis</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prescription of prescriptions">
+        <td>{{ prescription.prescriptionNo }}</td>
+        <td>{{ prescription.date }}</td>
+        <td>{{ prescription.doctorName }}</td>
+        <td>{{ prescription.diagnosis }}</td>
+        <td class="actions">
+          <i class="fa fa-eye"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
