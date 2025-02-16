@@ -1,30 +1,104 @@
-<!-- prescription-form.component.html -->
-<div class="form">
-    <h2>Add Prescription</h2>
-    <form (ngSubmit)="onSubmit()">
-      <label for="patientName">Patient Name:</label>
-      <input id="patientName" [(ngModel)]="prescription.patientName" name="patientName" required />
-      <label for="phoneNumber">Phone Number:</label>
-      <input id="phoneNumber" [(ngModel)]="prescription.phoneNumber" name="phoneNumber" required />
-      <label for="docterName">Docter Name:</label>
-      <input id="docterName" [(ngModel)]="prescription.docterName" name="docterName" required />
-      <label for="address">Address:</label>
-      <textarea id="address" [(ngModel)]="prescription.address" name="address"></textarea>
-      <label for="medicine1">Medicine 1:</label>
-      <input id="medicine1" [(ngModel)]="prescription.medicine1" name="medicine1" />
-      <div>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.morning" name="morning" /> Morning</label>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.afternoon" name="afternoon" /> Afternoon</label>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.night" name="night" /> Night</label>
+<div class="container mt-4">
+    <h2 class="text-center">Prescription Form</h2>
+  
+    <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit()">
+      <!-- Patient Email -->
+      <div class="mb-3">
+        <label class="form-label">Patient Email</label>
+        <input type="email" class="form-control" formControlName="patientEmail" placeholder="Enter patient email">
       </div>
-      <label for="medicine2">Medicine 2:</label>
-      <input id="medicine2" [(ngModel)]="prescription.medicine2" name="medicine2" />
-      <div>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.morning" name="morning" /> Morning</label>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.afternoon" name="afternoon" /> Afternoon</label>
-        <label><input type="checkbox" [(ngModel)]="prescription.schedule.night" name="night" /> Night</label>
+  
+      <!-- Doctor Name -->
+      <div class="mb-3">
+        <label class="form-label">Doctor Name</label>
+        <input type="text" class="form-control" formControlName="doctorName" placeholder="Enter doctor's name">
       </div>
-      <button type="submit">Save</button>
+  
+      <!-- Diagnosis -->
+      <div class="mb-3">
+        <label class="form-label">Diagnosis</label>
+        <input type="text" class="form-control" formControlName="diagnosis" placeholder="Enter diagnosis">
+      </div>
+  
+      <!-- Medications (Dynamic) -->
+      <h4>Medications</h4>
+      <div formArrayName="medications">
+        <div *ngFor="let med of medications.controls; let i = index" [formGroupName]="i" class="mb-3 border p-3 rounded">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Medicine name">
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Dosage</label>
+              <input type="text" class="form-control" formControlName="dosage" placeholder="e.g., 500mg">
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Quantity</label>
+              <input type="number" class="form-control" formControlName="quantity">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Instructions</label>
+              <input type="text" class="form-control" formControlName="instructions" placeholder="Dosage instructions">
+            </div>
+            <div class="col-md-1 d-flex align-items-end">
+              <button type="button" class="btn btn-danger" (click)="removeMedication(i)" *ngIf="medications.length > 1">
+                X
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-success mt-2" (click)="addMedication()">+ Add Medication</button>
+  
+      <!-- Additional Fields -->
+      <div class="mb-3">
+        <label class="form-label">Instructions</label>
+        <textarea class="form-control" formControlName="instructions" rows="2"></textarea>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-label">Start Date</label>
+          <input type="date" class="form-control" formControlName="startDate">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">End Date</label>
+          <input type="date" class="form-control" formControlName="endDate">
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Refills</label>
+        <input type="number" class="form-control" formControlName="refills">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Pharmacy</label>
+        <input type="text" class="form-control" formControlName="pharmacy">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Doctor Notes</label>
+        <textarea class="form-control" formControlName="doctorNotes" rows="2"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select class="form-control" formControlName="status">
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input type="datetime-local" class="form-control" formControlName="date">
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100 mt-3">Submit Prescription</button>
     </form>
   </div>
   

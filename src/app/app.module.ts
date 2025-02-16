@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { PrescriptionFormComponent } from './prescription-form/prescription-form.component';
@@ -45,7 +45,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MealComponent,
     ExcerciseComponent,
     ProfileComponent,
-    MedicineComponent
+    MedicineComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -53,6 +54,7 @@ import {MatRadioModule} from '@angular/material/radio';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatMenuModule,
     HttpClientModule,
