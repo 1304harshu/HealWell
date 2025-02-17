@@ -1,0 +1,33 @@
+
+<a routerLink="/diet">Back</a>
+<h1>Let's Plan Your Meal...</h1>
+
+<div class="toggle-buttons">
+    <button (click)="setMealType('vegetarian')" class="meal-btn">Vegetarian</button>
+    <button (click)="setMealType('non-vegetarian')" class="meal-btn">Non-Vegetarian</button>
+</div>
+
+<div class="week-container">
+    <div class="day" (click)="toggleMeals('monday')">
+        <button class="daybtn">Monday</button>
+    </div>
+
+    <div class="meals" *ngIf="visibleDay === 'monday'">
+        <div class="meal">
+            <h3>Breakfast</h3>
+            <img *ngIf="mealType === 'vegetarian'" src="oats.png" alt="Vegetarian Breakfast">
+            <img *ngIf="mealType === 'non-vegetarian'" src="food2.jpg" alt="Non-Vegetarian Breakfast">
+        </div>
+        <div class="meal">
+            <h3>Lunch</h3>
+            <img *ngIf="mealType === 'vegetarian'" src="quina.png" alt="Vegetarian Lunch">
+            <img *ngIf="mealType === 'non-vegetarian'" src="nonveg-lunch.jpg" alt="Non-Vegetarian Lunch">
+        </div>
+        <div class="meal">
+            <h3>Dinner</h3>
+            <img *ngIf="mealType === 'vegetarian'" src="panner.png" alt="Vegetarian Dinner">
+            <img *ngIf="mealType === 'non-vegetarian'" src="nonveg-dinner.jpg" alt="Non-Vegetarian Dinner">
+        </div>
+    </div>
+</div>
+
