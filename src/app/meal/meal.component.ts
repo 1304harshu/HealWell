@@ -6,26 +6,36 @@ import { Component } from '@angular/core';
   styleUrl: './meal.component.scss'
 })
 export class MealComponent {
-  selectedType: string = 'vegetarian';
-  activeDay: string | null = null;
+   toggleMeals(day) {
+    let mealsDiv = document.getElementById(day);
 
-  days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    // Close all other meal divs smoothly
+    document.querySelectorAll('.meals').forEach(meal => {
+        if (meal !== mealsDiv) {
+            meal.classList.remove("show");
+        }
+    });
 
-  meals = [
-    { name: 'Breakfast', vegImg: 'assets/oats.png', nonVegImg: 'assets/meal/oats.png' },
-    { name: 'Lunch', vegImg: 'assets/quina.png', nonVegImg: 'assets/nonveg-lunch.jpg' },
-    { name: 'Dinner', vegImg: 'assets/panner.png', nonVegImg: 'assets/nonveg-dinner.jpg' }
-  ];
+    // Toggle visibility of clicked day meals
+    mealsDiv.classList.toggle("show");
+}
 
-  setMealType(type: string) {
-    this.selectedType = type;
-  }
+ setMealType(type) {
+    let vegMeals = document.querySelectorAll(".veg");
+    let nonVegMeals = document.querySelectorAll(".non-veg");
 
-  toggleMeals(day: string) {
-    this.activeDay = this.activeDay === day ? null : day;
-  }
+    if (type === "vegetarian") {
+        vegMeals.forEach(img => img.style.display = "block");
+        nonVegMeals.forEach(img => img.style.display = "none");
+    } else {
+        vegMeals.forEach(img => img.style.display = "none");
+        nonVegMeals.forEach(img => img.style.display = "block");
+    }
+}
 
-  getMealImage(meal: any): string {
-    return this.selectedType === 'vegetarian' ? meal.vegImg : meal.nonVegImg;
-  }
+// Default to vegetarian when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+    setMealType("vegetarian");
+});
+
 }

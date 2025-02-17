@@ -1,22 +1,62 @@
-<div class="meal-planner">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Planner</title>
+    <link rel="stylesheet" href="meal.css">
+</head>
+<body>
+    <a href="diet.html">Back</a>
     <h1>Let's Plan Your Meal...</h1>
-  
     <div class="toggle-buttons">
-      <button (click)="setMealType('vegetarian')" class="meal-btn">Vegetarian</button>
-      <button (click)="setMealType('non-vegetarian')" class="meal-btn">Non-Vegetarian</button>
+        <button onclick="setMealType('vegetarian')" class="meal-btn">Vegetarian</button>
+        <button onclick="setMealType('non-vegetarian')" class="meal-btn">Non-Vegetarian</button>
     </div>
-  
+
     <div class="week-container">
-      <div *ngFor="let day of days">
-        <button class="daybtn" (click)="toggleMeals(day)">{{ day }}</button>
-  
-        <div [class.show]="activeDay === day" class="meals">
-          <div *ngFor="let meal of meals" class="meal">
-            <h3>{{ meal.name }}</h3>
-            <img [src]="getMealImage(meal)" alt="{{ meal.name }}">
-          </div>
+        <div class="day" onclick="toggleMeals('monday')">
+            <button class="daybtn">Monday</button>
         </div>
-      </div>
+        <div class="meals" id="monday">
+            <div class="meal">
+                <h3>Breakfast</h3>
+                <img src="oats.png" class="veg" alt="Vegetarian Breakfast">
+                <img src="food2.jpg" class="non-veg" alt="Non-Vegetarian Breakfast">
+            </div>
+            <div class="meal">
+                <h3>Lunch</h3>
+                <img src="quina.png" class="veg" alt="Vegetarian Lunch">
+                <img src="nonveg-lunch.jpg" class="non-veg" alt="Non-Vegetarian Lunch">
+            </div>
+            <div class="meal">
+                <h3>Dinner</h3>
+                <img src="panner.png" class="veg" alt="Vegetarian Dinner">
+                <img src="nonveg-dinner.jpg" class="non-veg" alt="Non-Vegetarian Dinner">
+            </div>
+        </div>
+
+        <div class="day" onclick="toggleMeals('tuesday')">
+            <button class="daybtn">tuesday</button>
+        </div>
+        <div class="meals" id="tuesday">
+            <div class="meal">
+                <h3>Breakfast</h3>
+                <img src="oats.png" class="veg" alt="Vegetarian Breakfast">
+                <img src="food2.jpg" class="non-veg" alt="Non-Vegetarian Breakfast">
+            </div>
+            <div class="meal">
+                <h3>Lunch</h3>
+                <img src="quina.png" class="veg" alt="Vegetarian Lunch">
+                <img src="nonveg-lunch.jpg" class="non-veg" alt="Non-Vegetarian Lunch">
+            </div>
+            <div class="meal">
+                <h3>Dinner</h3>
+                <img src="panner.png" class="veg" alt="Vegetarian Dinner">
+                <img src="nonveg-dinner.jpg" class="non-veg" alt="Non-Vegetarian Dinner">
+            </div>
+        </div>
     </div>
-  </div>
-  
+    <script src="meal.js"></script>
+</body>
+</html>

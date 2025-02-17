@@ -33,7 +33,7 @@
         <!--Logo-->
         <div class="col-10 col-md-10 col-lg-8 logo py-2 px-4 d-flex">
             <a routerLink="/">
-                <img src="../../../assets/images/janusLogo.png" />
+                <img src="../../assets/images/logo.PNG" style="width: 2vw; margin-right: 2vh"/>
             </a>
             <h2 class="m-0">HealWell</h2> 
         </div>
@@ -46,9 +46,9 @@
                     <span [hidden]="imageToShow" class="profile-name">{{userInfo.NTID | slice:0:2}}</span>
                 </div> -->
                 <div class="pl-8 cursor-pointer min-width-125px user-title-block">
-                    <span class="d-block user-title">
-                        <!-- {{userInfo.displayName}} -->
-                    </span>
+                    <h5 class="d-block user-title">
+                       <b> Welcome, {{user.name}}</b>
+                    </h5>
                     <mat-menu #userDetails="matMenu" class="header-dropdown">
                         <ul>
                             <li nz-menu-item class="cursor-pointer" (click)="logout()">

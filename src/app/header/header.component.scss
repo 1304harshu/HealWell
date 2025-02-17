@@ -24,10 +24,11 @@
 }
 
 .userInfo {
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    margin-right: 2vw;
     font-weight: 600;
     letter-spacing: 0.02rem;
-    color: #fff;
+    color: #020202;
 
     .down-arrow {
         opacity: 0.7
@@ -61,7 +62,7 @@
     }
 
     .user-title {
-        font-size: 14px;
+        // font-size: 14px;
         line-height: 16px;
 
         small {

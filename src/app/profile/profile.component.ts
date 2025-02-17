@@ -20,9 +20,8 @@ export class ProfileComponent {
   activeTab: string = 'personal-info'; // Default tab
 
   patient = {
-    name: 'Brendon Rogers',
+    name: 'Harsh Upadhyay',
     diagnosis: 'Coronary atherosclerosis - Latest diagnosis',
-    image: 'assets/brendon.jpg',
     personalInfo: [
       { label: 'Sex', value: 'Female' },
       { label: 'Age', value: '28' },
@@ -35,7 +34,8 @@ export class ProfileComponent {
     ],
     visits: [
       { date: '12 Jan, 2024', doctor: 'Dr. Sharma', notes: 'Routine checkup' },
-      { date: '15 Feb, 2024', doctor: 'Dr. Verma', notes: 'Blood Pressure check' }
+      { date: '15 Feb, 2024', doctor: 'Dr. Verma', notes: 'Blood Pressure check' },
+      
     ],
     labReports: [
       { test: 'Cholesterol', result: 'Normal', date: '10 Jan, 2024' },

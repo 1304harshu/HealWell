@@ -13,23 +13,9 @@
         
         <form id="appointmentForm">
             <label>Patients Name:</label>
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" placeholder="Patient's Name" required>
 
             <!-- DOB Selection -->
-<label>Date of Birth:</label>
-<div class="dob-container">
-  <select id="dob-day">
-    <option *ngFor="let day of days" [value]="day">{{ day }}</option>
-  </select>
-  <select id="dob-month">
-    <option *ngFor="let month of months; let i = index" [value]="i+1">{{ month }}</option>
-  </select>
-  <select id="dob-year">
-    <option *ngFor="let year of years" [value]="year">{{ year }}</option>
-  </select>
-</div>
-
             <label>Gender:</label>
             <select required>
                 <option value="">Please Select</option>
@@ -44,14 +30,8 @@
             <label>Email:</label>
             <input type="email" placeholder="ex: myname@example.com" required>
 
-            <label>Address:</label>
-            <input type="text" placeholder="Street Address" required>
-            <input type="text" placeholder="Street Address Line 2">
-            <input type="text" placeholder="City" required>
-            <input type="text" placeholder="State / Province" required>
-            <input type="text" placeholder="Postal / Zip Code" required>
 
-            <label for="appointment-procedure">Which procedure do you want to make an appointment for?</label>
+            <label for="appointment-procedure">Select Preferred Docter: </label>
             <select id="appointment-procedure" required>
                 <option value="" disabled selected>Please Select</option>
                 <option *ngFor="let doc of doctorsList" [value]="doc._id">{{doc.name}} ({{doc.specialty}})</option>
@@ -60,10 +40,14 @@
                 <option value="gynecologist">Dr. Anjali Rao (Gynecologist)</option> -->
             </select>
 
+            <label for="appointment-procedure">Appointment Type: </label>
+            <select id="appointment-procedure" required>
+                <option value="physical">In-Person</option>
+                <option value="Virtual">Virtual</option>
+            </select>
+
             <label>Preferred Appointment Date:</label>
             <input type="date" id="appointment-date" required>
-
-            <label>Available Time Slots:</label>
             <!-- Time Slot Selection -->
 <label>Available Time Slots:</label>
 <div class="time-slots">

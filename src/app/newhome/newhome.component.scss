@@ -67,40 +67,40 @@
     height: 72vh;
 }
 
-/* ✅ Responsive Adjustments */
-@media (max-width: 1440px) {  /* For smaller laptops */
-    .welcome-section {
-        left: 90vh;
-    }
-    .welcome-text {
-        left: 15vh;
-    }
-}
+// /* ✅ Responsive Adjustments */
+// @media (max-width: 1440px) {  /* For smaller laptops */
+//     .welcome-section {
+//         left: 90vh;
+//     }
+//     .welcome-text {
+//         left: 15vh;
+//     }
+// }
 
-@media (max-width: 1024px) {  /* For tablets */
-    .welcome-section {
-        flex-direction: column;
-        height: auto;
-        width: 80vh;
-        left: auto;
-    }
-    .welcome-text {
-        text-align: center;
-        bottom: auto;
-        left: auto;
-        width: 90%;
-    }
-    .welcome-text p {
-        font-size: 50px;
-    }
-    .tag {
-        font-size: 18px;
-    }
-    .welcome-image img {
-        height: 60vh;
-        max-width: 100%;
-    }
-}
+// @media (max-width: 1024px) {  /* For tablets */
+//     .welcome-section {
+//         flex-direction: column;
+//         height: auto;
+//         width: 80vh;
+//         left: auto;
+//     }
+//     .welcome-text {
+//         text-align: center;
+//         bottom: auto;
+//         left: auto;
+//         width: 90%;
+//     }
+//     .welcome-text p {
+//         font-size: 50px;
+//     }
+//     .tag {
+//         font-size: 18px;
+//     }
+//     .welcome-image img {
+//         height: 60vh;
+//         max-width: 100%;
+//     }
+// }
 
 /* Header Text Styling */
 .header {
@@ -155,34 +155,127 @@
 }
 
 
-/* ✅ Responsive Adjustments */
-@media (max-width: 1440px) {  /* Laptops */
+// /* ✅ Responsive Adjustments */
+// @media (max-width: 1440px) {  /* Laptops */
+//     .header {
+//         bottom: 50vh;
+//         left: 20vh;
+//         width: 60vh;
+//     }
+//     .header .badge {
+//         right: 18vh;
+//     }
+// }
+
+// @media (max-width: 1024px) {  /* Tablets */
+//     .header {
+//         bottom: 40vh;
+//         left: auto;
+//         width: 80%;
+//         margin: 0 auto;
+//     }
+//     .header .head1 {
+//         font-size: 60px;
+//         width: 100%;
+//         line-height: 90px;
+//     }
+//     .header .tag {
+//         font-size: 18px;
+//     }
+// }
+/* Ensure proportional scaling on laptops */
+@media screen and (max-width: 1440px) {
+    .welcome-section {
+        width: 55vh; /* Reduce width proportionally */
+        height: 52vh; /* Adjust height proportionally */
+        top: 8vh;
+        left: 127vh; /* Adjust position */
+        padding: 30px; /* Reduce padding slightly */
+    }
+
+    .welcome-text {
+        width: 60vh;
+        font-size: 1.8vw;
+        bottom: 38vh;
+        left: 15vh;
+    }
+
+    .welcome-text p {
+        font-size: 4vw; /* Scale heading */
+    }
+
+    .welcome-image img {
+        height: auto;
+        left: 27vh;
+        top: -43px;
+        width: 46vh
+    }
+
     .header {
-        bottom: 50vh;
-        left: 20vh;
+        width: 60vh;
+        right: 122vh;
+        padding: 40px 15px;
+    }
+
+    .header .head1 {
+        font-size: 4.5vw;
+        line-height: 90px;
         width: 60vh;
     }
+
     .header .badge {
-        right: 18vh;
+        right: 20vh;
+        top: 1vh;
+    }
+
+    .header .tag {
+        font-size: 18px;
+        line-height: 1.5;
     }
 }
 
-@media (max-width: 1024px) {  /* Tablets */
+/* Small Laptops (13-inch screens) */
+@media screen and (max-width: 1024px) {
+    .welcome-section {
+        width: 50vh;
+        height: 48vh;
+        left: 80vh;
+        top: 5vh;
+    }
+
+    .welcome-text {
+        width: 50vh;
+        font-size: 1.6vw;
+        bottom: 30vh;
+        left: 10vh;
+    }
+
+    .welcome-text p {
+        font-size: 3.5vw;
+    }
+
+    .welcome-image img {
+        left: 20vh;
+        height: 65vh;
+        top: -40px;
+    }
+
     .header {
-        bottom: 40vh;
-        left: auto;
-        width: 80%;
-        margin: 0 auto;
+        width: 55vh;
+        right: 73vh;
     }
+
     .header .head1 {
-        font-size: 60px;
-        width: 100%;
-        line-height: 90px;
+        font-size: 4vw;
+        line-height: 80px;
+        width: 55vh;
     }
+
     .header .tag {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
+
 
 /* Buttons Container */
 .buttons {
@@ -347,16 +440,14 @@
     text-decoration: underline;
 }
 
-@media (max-width: 1452px) {
-    .title {
-        margin-top: 68px;
-    }
-}
 /* ✅ Responsiveness for Laptop Screens */
-@media (max-width: 1366px) {
+@media (min-width: 1432px) {
     .container {
         margin-top: 30px;
         gap: 20px;
+    }
+    .title {
+        margin-top: 68px;
     }
     .service-box {
         width: 260px;
@@ -424,4 +515,133 @@
     }
 
 }
+/* section 4 css */
+.section-title {
+    text-align: center;
+    margin: 104px 0;
+    color: #003366;
+    font-weight: bold;
+    font-size: 4.6vh;
 
+  }
+  
+  .review-section {
+    background-color: #cceeff;
+    padding: 40px 10px;
+    text-align: center;
+  }
+  
+  /* Slider Container */
+  .slider-container1 {
+    max-width: 178vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .review {
+    display: none;
+    animation: fade-in 4s ease-in-out;
+  }
+  
+  .review.active {
+    display: block;
+  }
+  
+  .profile-pic img {
+    border-radius: 50%;
+    width: 122px;
+    height: 122px;
+    
+  }
+   .profile-pic{
+    width: 12vh;
+    position: relative;
+    left: 37vh;
+    top: 9vh;
+   }
+   .info{
+    width: 12vh;
+    position: relative;
+    left: 37vh;
+    top: 48px;
+   }
+  
+  .tag4 {
+    margin: 10px 0 0;
+    color: #004080;
+    position: relative;
+    bottom: 5vh;
+  }
+  
+  .job-title {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 5vh;
+  }
+  
+  .review-title {
+    color: #003366;
+    margin: 10px 0;
+    font-size: 2.0736rem;
+    width: 38vh;
+    position: relative;
+    left: 57vh;
+    bottom: 4vh;
+  }
+  
+  .stars {
+    color: #ff9900;
+    font-size: 1.4rem;
+    position: relative;
+    left: -25vh;
+    bottom: 4vh;
+  }
+  
+  .review-text {
+    font-size: 1rem;
+    color: #1B71A1;
+    max-width: 952px;
+    margin: 10px auto;
+    text-align: justify;
+    position: relative;
+    bottom: 10vh;
+    left: 20vh;
+    line-height: 26px;
+  }
+  
+  /* Dots */
+  .dots-container {
+    margin-top: 20px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #999;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #0066cc;
+  }
+  
+@keyframes slide {
+    0%, 25% { 
+        transform: translateX(0); /* Slide 1 visible */
+      }
+      33%, 58% { 
+        transform: translateX(-100%); /* Slide 2 visible */
+      }
+      66%, 91% { 
+        transform: translateX(-200%); /* Slide 3 visible */
+      }
+      100% { 
+        transform: translateX(0); /* Back to Slide 1 */
+      }
+}

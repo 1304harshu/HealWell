@@ -43,7 +43,7 @@ export class PrescriptionListComponent implements OnInit{
       }
 
     },(error)=>{
-
+        this.dataSource=[];
     })
   }
 

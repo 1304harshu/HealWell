@@ -30,6 +30,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth.interceptor';  // Import Interceptor
+import { NewhomeComponent } from './newhome/newhome.component';
+import { FoodplanComponent } from './foodplan/foodplan.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AuthInterceptor } from './shared/auth.interceptor';  // Import Intercep
     ExcerciseComponent,
     ProfileComponent,
     MedicineComponent,
+    NewhomeComponent,
+    FoodplanComponent,
 
   ],
   imports: [
@@ -66,7 +70,12 @@ import { AuthInterceptor } from './shared/auth.interceptor';  // Import Intercep
     MatTableModule,
     MatTooltipModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatRadioModule,  
+    MatCardModule,   
+    MatDividerModule, 
+    MatIconModule, 
+    MatTableModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

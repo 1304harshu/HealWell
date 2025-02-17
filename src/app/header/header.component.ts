@@ -15,9 +15,12 @@ export class HeaderComponent {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getUser().subscribe(user => {
-      this.user = user;
-    });
+    // this.authService.getUser().subscribe(user => {
+    //   console.log(user);
+      
+    //   this.user = user;
+    // });
+    this.user = JSON.parse(localStorage.getItem('userInfo') || '{}')
   }
 
   logout() {
