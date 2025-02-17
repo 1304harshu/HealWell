@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
   private apiURL = 'http://localhost:5000/api/auth'; // Backend URL
 
@@ -14,13 +13,8 @@ export class AuthService {
   user$ = this.userSubject.asObservable(); // Expose as observable
 
   constructor(private http: HttpClient, private router: Router) {
-    // Initialize from local storage if available
-    // const storedUser = localStorage.getItem('userInfo');
-    // if (storedUser) {
-    //   this.userSubject.next(JSON.parse(storedUser));
-    // }
-  }
 
+  }
   login(credentials: { email: string; password: string; role: string }) {
     return this.http.post<{ token: string }>(`${this.apiURL}/login`, credentials).pipe(
       tap(response => {
@@ -30,11 +24,6 @@ export class AuthService {
       })
     );;
   }
-
-  // logout() {
-  //   localStorage.removeItem('userInfo');
-  //   this.router.navigate(['/login']);
-  // }
 
   logout() {
     localStorage.removeItem('token');
