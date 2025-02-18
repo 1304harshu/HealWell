@@ -1,31 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-meal',
   templateUrl: './meal.component.html',
-  styleUrl: './meal.component.scss'
+  styleUrls: ['./meal.component.scss']
 })
-export class MealComponent {
-  selectedType: string = 'vegetarian';
-  activeDay: string | null = null;
+export class MealComponent implements OnInit {
 
-  days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  constructor() {}
 
-  meals = [
-    { name: 'Breakfast', vegImg: 'assets/oats.png', nonVegImg: 'assets/meal/oats.png' },
-    { name: 'Lunch', vegImg: 'assets/quina.png', nonVegImg: 'assets/nonveg-lunch.jpg' },
-    { name: 'Dinner', vegImg: 'assets/panner.png', nonVegImg: 'assets/nonveg-dinner.jpg' }
-  ];
-
-  setMealType(type: string) {
-    this.selectedType = type;
+  ngOnInit(): void {
+    this.setMealType("vegetarian"); // Default to vegetarian when the page loads
   }
 
-  toggleMeals(day: string) {
-    this.activeDay = this.activeDay === day ? null : day;
+  toggleMeals(day: string): void {
+    // Hide all meal sections
+    document.querySelectorAll<HTMLElement>('.meals').forEach(meal => {
+      meal.classList.remove("show");
+    });
+
+    // Show only the selected day's meals
+    const selectedDay = document.getElementById(day);
+    if (selectedDay) {
+      selectedDay.classList.add("show");
+    }
   }
 
-  getMealImage(meal: any): string {
-    return this.selectedType === 'vegetarian' ? meal.vegImg : meal.nonVegImg;
+  setMealType(type: string): void {
+    const vegMeals = document.querySelectorAll<HTMLElement>(".veg");
+    const nonVegMeals = document.querySelectorAll<HTMLElement>(".non-veg");
+
+    if (type === "vegetarian") {
+      vegMeals.forEach(img => img.style.display = "block");
+      nonVegMeals.forEach(img => img.style.display = "none");
+    } else {
+      vegMeals.forEach(img => img.style.display = "none");
+      nonVegMeals.forEach(img => img.style.display = "block");
+    }
   }
 }
+
