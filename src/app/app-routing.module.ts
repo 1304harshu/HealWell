@@ -5,7 +5,7 @@ import { PrescriptionFormComponent } from './prescription-form/prescription-form
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
+import { NewhomeComponent} from './newhome/newhome.component';
 import { ExcerciseComponent } from './excercise/excercise.component';
 import { MealComponent } from './meal/meal.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: DashboardComponent,
     children:[
-      { path:'dashboard', component: HomeComponent },
+      { path:'dashboard', component: NewhomeComponent},
       { path: 'appointment', component: AppointmentComponent },
       { path: 'prescription-list', component: PrescriptionListComponent },
       { path: 'exercise', component: ExcerciseComponent },
