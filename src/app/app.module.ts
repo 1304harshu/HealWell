@@ -32,6 +32,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/auth.interceptor';  // Import Interceptor
 import { NewhomeComponent } from './newhome/newhome.component';
 import { FoodplanComponent } from './foodplan/foodplan.component';
+import { AptListComponent } from './apt-list/apt-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -51,9 +54,13 @@ import { FoodplanComponent } from './foodplan/foodplan.component';
     MedicineComponent,
     NewhomeComponent,
     FoodplanComponent,
+    AptListComponent,
 
   ],
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     BrowserModule,
     BrowserAnimationsModule,
     BrowserModule,
