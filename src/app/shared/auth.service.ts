@@ -29,6 +29,7 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('userInfo');
     this.userSubject.next(null);
+    this.router.navigate(['/'])
   }
 
   getUser(): Observable<any> {

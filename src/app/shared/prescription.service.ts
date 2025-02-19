@@ -10,13 +10,20 @@ export class PrescriptionService {
 
   constructor(private http: HttpClient) {}
 
-  addPrescription(prescription: any) {
-    return this.http.post(this.apiURL, prescription);
-  }
+
 
   getPrescriptions() {
     return this.http.get<any[]>(`${this.apiURL}patient/prescriptions`);
   }
+
+  getMedicineList(inputData: any){
+    return this.http.get<any[]>(`${this.apiURL}admin/medications-by-diagnosis?diagnosis=${inputData}`);
+  }
+
+  addPrescription(inputData: any){
+    return this.http.post(`${this.apiURL}admin/add-prescription`, inputData);
+  }
+
 
   setStoredPrescription(data: any) {
     this.storedPrescription = data;

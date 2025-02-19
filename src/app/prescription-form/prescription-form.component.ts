@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PrescriptionService } from '../shared/prescription.service';
 
 @Component({
   selector: 'app-prescription-form',
   templateUrl: './prescription-form.component.html',
   styleUrls: ['./prescription-form.component.scss']
 })
-export class PrescriptionFormComponent {
+export class PrescriptionFormComponent implements OnInit {
   prescriptionForm: FormGroup;
+  medList: any[]= [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private prescriptionService: PrescriptionService) {
     this.prescriptionForm = this.fb.group({
       patientEmail: ['', [Validators.required, Validators.email]],
       doctorName: ['', Validators.required],
@@ -27,6 +29,16 @@ export class PrescriptionFormComponent {
 
     this.addMedication(); // Add one medication field by default
   }
+  ngOnInit(): void {
+    // this.getMedicineList()
+  }
+  
+  getMedicineList(){
+    this.prescriptionService.getMedicineList(this.prescriptionForm.get('diagnosis')?.value).subscribe((resp)=>{
+      this.medList = resp;
+    })
+  }
+
 
   // Getter for medications FormArray
   get medications() {
@@ -54,7 +66,14 @@ export class PrescriptionFormComponent {
   onSubmit() {
     if (this.prescriptionForm.valid) {
       console.log('Prescription Data:', this.prescriptionForm.value);
-      alert('Prescription submitted successfully!');
+
+      this.prescriptionService.addPrescription(this.prescriptionForm.value).subscribe((resp)=>{
+        alert('Prescription submitted successfully!');
+      },
+      error=>{
+        alert('Prescription failed to submit!');
+      })
+
     } else {
       alert('Please fill all required fields.');
     }

@@ -56,7 +56,7 @@ export class LoginComponent {
       },
       (error) => {
         this.isErrorApi = true;
-        this.errorMsg = error.error.message;
+        this.errorMsg = error.error.message ? error.error.message : "Something went wrong!";
         console.error('Error:', error);
       }
     );
@@ -78,7 +78,7 @@ export class LoginComponent {
       },
       (error: any) => {
         this.isErrorApi = true
-        this.errorMsg = error.error.message;
+        this.errorMsg = error.error.message ? error.error.message : "Something went wrong!";
         console.error('Error:', error);
       }
     );

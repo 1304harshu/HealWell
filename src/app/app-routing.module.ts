@@ -20,6 +20,7 @@ const routes: Routes = [
       { path:'dashboard', component: NewhomeComponent},
       { path: 'appointment', component: AppointmentComponent },
       { path: 'prescription-list', component: PrescriptionListComponent },
+      { path: 'add-prescription', component: PrescriptionFormComponent },
       { path: 'exercise', component: ExcerciseComponent },
       { path: 'diet', component: MealComponent },
       { path: 'profile', component: ProfileComponent },

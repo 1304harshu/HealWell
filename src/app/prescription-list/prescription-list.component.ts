@@ -32,18 +32,18 @@ export class PrescriptionListComponent implements OnInit{
     { prescriptionNo: 'RX003', date: '2025-02-10', doctorName: 'Dr. C Rao', diagnosis: 'High Cholesterol' }
   ];
 
-  dataSource:any
+  dataSourceTab:any
 
   constructor(private prescriptionService: PrescriptionService, private router:Router){}
   ngOnInit(): void {
     this.prescriptionService.getPrescriptions().subscribe((resp:any)=>{
       if(resp.data){
         this.prescriptions = resp.data
-        this.dataSource = new MatTableDataSource<any>(this.prescriptions);
+        this.dataSourceTab = new MatTableDataSource<any>(this.prescriptions);
       }
 
     },(error)=>{
-        this.dataSource=[];
+        this.dataSourceTab=[];
     })
   }
 

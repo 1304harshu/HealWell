@@ -65,17 +65,14 @@ import { FoodplanComponent } from './foodplan/foodplan.component';
     MatExpansionModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule,
     MatCardModule,
     MatTableModule,
     MatTooltipModule,
     MatDividerModule,
     MatRadioModule,
-    MatRadioModule,  
     MatCardModule,   
     MatDividerModule, 
     MatIconModule, 
-    MatTableModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

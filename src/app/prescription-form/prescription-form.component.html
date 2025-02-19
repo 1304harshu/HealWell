@@ -17,7 +17,7 @@
       <!-- Diagnosis -->
       <div class="mb-3">
         <label class="form-label">Diagnosis</label>
-        <input type="text" class="form-control" formControlName="diagnosis" placeholder="Enter diagnosis">
+        <input type="text" class="form-control" formControlName="diagnosis" (focusout)="getMedicineList()" placeholder="Enter diagnosis">
       </div>
   
       <!-- Medications (Dynamic) -->
@@ -27,7 +27,11 @@
           <div class="row">
             <div class="col-md-3">
               <label class="form-label">Name</label>
-              <input type="text" class="form-control" formControlName="name" placeholder="Medicine name">
+              <select class="form-control" formControlName="name">
+                <option [value]="medicine.name" *ngFor="let medicine of medList">{{medicine.name}}</option>
+                <!-- <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option> -->
+              </select>
             </div>
             <div class="col-md-2">
               <label class="form-label">Dosage</label>

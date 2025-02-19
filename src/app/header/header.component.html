@@ -60,9 +60,9 @@
                     </mat-menu>
                 </div>
                 <!-- <div class="down-arrow cursor-pointer" [matMenuTriggerFor]="userDetails"> -->
-                <!-- <div class="down-arrow cursor-pointer" [matMenuTriggerFor]="userDetails">
+                <div class="down-arrow cursor-pointer" [matMenuTriggerFor]="userDetails">
                     <mat-icon>keyboard_arrow_down</mat-icon>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
@@ -80,7 +80,8 @@
                 <li>
                     <a routerLink="dashboard" routerLinkActive="active" class="px-3">Home</a>
                     <a routerLink="appointment" routerLinkActive="active">Appointments</a>
-                    <a routerLink="prescription-list" routerLinkActive="active">Prescription</a>
+                    <a *ngIf="user.role !='admin'" routerLink="prescription-list" routerLinkActive="active">Prescription</a>
+                    <a *ngIf="user.role =='admin'" routerLink="add-prescription" routerLinkActive="active">Add Prescription</a>
                     <a routerLink="exercise" routerLinkActive="active">Exercise</a>
                     <a routerLink="diet" routerLinkActive="active">Diet</a>
                     <a routerLink="profile" routerLinkActive="active">Profile</a>
