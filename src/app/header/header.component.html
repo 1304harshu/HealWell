@@ -29,7 +29,7 @@
 </div> -->
 
 <div class="header" style="background-color: #f9f9f9;">
-    <div class="row pb-2">
+    <div class="row">
         <!--Logo-->
         <div class="col-10 col-md-10 col-lg-8 logo py-2 px-4 d-flex">
             <a routerLink="/">
@@ -79,7 +79,8 @@
             </li> -->
                 <li>
                     <a routerLink="dashboard" routerLinkActive="active" class="px-3">Home</a>
-                    <a routerLink="appointment" routerLinkActive="active">Appointments</a>
+                    <a *ngIf="user.role !='admin'" routerLink="appointment" routerLinkActive="active">Appointments</a>
+                    <a *ngIf="user.role =='admin'" routerLink="appointment-list" routerLinkActive="active">Appointments</a>
                     <a *ngIf="user.role !='admin'" routerLink="prescription-list" routerLinkActive="active">Prescription</a>
                     <a *ngIf="user.role =='admin'" routerLink="add-prescription" routerLinkActive="active">Add Prescription</a>
                     <a routerLink="exercise" routerLinkActive="active">Exercise</a>

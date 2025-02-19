@@ -13,26 +13,13 @@
         
         <form id="appointmentForm">
             <label>Patients Name:</label>
-            <input type="text" placeholder="Patient's Name" required>
-
-            <!-- DOB Selection -->
-            <label>Gender:</label>
-            <select required>
-                <option value="">Please Select</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
+            <input matInput type="text" name="userName" [(ngModel)]="loggedInUser" placeholder="Patient's Name" required>
 
             <label>Phone Number:</label>
-            <input type="tel" placeholder="(000) 000-0000" required>
+            <input type="tel" name="telNumber" placeholder="(000) 000-0000" required>
 
-            <label>Email:</label>
-            <input type="email" placeholder="ex: myname@example.com" required>
-
-
-            <label for="appointment-procedure">Select Preferred Docter: </label>
-            <select id="appointment-procedure" required>
+            <label for="appointment-procedure">Select a Docter: </label>
+            <select id="appointment-procedure" (change)="selectedDoc($event)" required>
                 <option value="" disabled selected>Please Select</option>
                 <option *ngFor="let doc of doctorsList" [value]="doc._id">{{doc.name}} ({{doc.specialty}})</option>
                 <!-- <option value="neurologist">Dr. Arun Mehta (Neurologist)</option>
@@ -40,24 +27,19 @@
                 <option value="gynecologist">Dr. Anjali Rao (Gynecologist)</option> -->
             </select>
 
+            <label>Reason:</label>
+            <input type="text" name="aptReason" [(ngModel)]="aptReason" placeholder="" required>
+
             <label for="appointment-procedure">Appointment Type: </label>
-            <select id="appointment-procedure" required>
+            <select id="appointment-procedure" name="aptType" [(ngModel)]="aptType" required>
                 <option value="physical">In-Person</option>
                 <option value="Virtual">Virtual</option>
             </select>
 
             <label>Preferred Appointment Date:</label>
-            <input type="date" id="appointment-date" required>
-            <!-- Time Slot Selection -->
-<label>Available Time Slots:</label>
-<div class="time-slots">
-  <button *ngFor="let time of ['19:30', '20:00', '20:30', '21:00', '21:30', '22:00']"
-          [class.active]="selectedTime === time"
-          (click)="selectTime(time)">
-    {{ time }}
-  </button>
-</div>
-            <button type="submit" class="submit-btn">Submit</button>
+            <input type="datetime-local" id="appointment-date" name="aptDate" [(ngModel)]="aptDate" required>
+            
+            <button type="submit" (click)="submitApt()" class="submit-btn">Submit</button>
         </form>
     </div>
 

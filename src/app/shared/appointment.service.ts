@@ -14,5 +14,13 @@ export class AppointmentService {
     return this.http.get<any[]>(`${this.apiURL}patient/doctors`);
   }
 
+  getAppointments() {
+    return this.http.get<any[]>(`${this.apiURL}admin/appointments`);
+  }
+
+  addAppointment(reqData: any){
+    return this.http.post(`${this.apiURL}patient/schedule-appointment`, reqData);
+  }
+
 
 }

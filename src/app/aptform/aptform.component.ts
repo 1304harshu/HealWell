@@ -12,44 +12,54 @@ export class AptformComponent implements OnInit{
     years: number[] = [];
     selectedTime: string = '';
   doctorsList: any[] = [];
+  loggedInUser: any = ''
+  selectedDocDetails: any;
+  userData: any;
+  aptType= 'physical';
+  aptDate!: Date;
+  aptReason: any;
   
     constructor(private aptService: AppointmentService) {
-      this.populateDOBFields();
     }
   ngOnInit(): void {
 
+    this.userData = JSON.parse(localStorage.getItem('userInfo') || '{}')
+    this.loggedInUser = this.userData.name
     this.aptService.getDoctorsList().subscribe((resp)=>{
       this.doctorsList = resp
     })
 
   }
   
-    ngAfterViewInit() {
-      // Add event listeners to restrict non-numeric input in the DOB fields
-      this.restrictInput('dob-day', 2);
-      this.restrictInput('dob-month', 2);
-      this.restrictInput('dob-year', 4);
-    }
   
     // Function to select and highlight the clicked time slot
     selectTime(time: string) {
       this.selectedTime = time;
     }
   
-    // Function to populate DOB dropdowns
-    populateDOBFields() {
-      this.days = Array.from({ length: 31 }, (_, i) => i + 1);
-      const currentYear = new Date().getFullYear();
-      this.years = Array.from({ length: 101 }, (_, i) => currentYear - i);
+    selectedDoc(event: any){
+      this.selectedDocDetails = event.target.value
     }
-  
-    // Restricts input fields to numbers only
-    restrictInput(elementId: string, maxLength: number) {
-      const element = document.getElementById(elementId) as HTMLInputElement;
-      if (element) {
-        element.addEventListener('input', function () {
-          this.value = this.value.replace(/[^0-9]/g, '').slice(0, maxLength);
-        });
+
+    submitApt(){
+      let inputData = {
+        "patientId": this.userData.id,
+        "doctorId": this.selectedDocDetails,
+        "appointmentDate": this.aptDate,
+        "reason": this.aptReason,
+        "appointmentType": this.aptType,
+        "status": "active"
       }
+
+      this.aptService.addAppointment(inputData).subscribe((resp)=>{
+        alert('Appointment scheduled successfully!');
+        this.selectedDocDetails = '';
+        this.userData = '';
+        this.aptType = 'physical';
+        this.aptReason = '';
+      },
+      error=>{
+        alert('Appointment failed to schedule!');
+      })
     }
   }

@@ -31,6 +31,7 @@
         <tr>
           <th>Sl</th>
           <th>Medicine Name</th>
+          <th>Dosage</th>
           <th>Regime and Instruction</th>
         </tr>
       </thead>
@@ -39,6 +40,7 @@
           <!-- {{medicine|json}} -->
           <td>{{ i + 1 }}</td>
           <td><strong>{{ medicine.name }}</strong></td>
+          <td>{{ medicine.dosage }}</td>
           <td>{{ medicine.instructions }}</td>
         </tr>
       </tbody>

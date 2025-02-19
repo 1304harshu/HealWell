@@ -7,7 +7,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { PrescriptionFormComponent } from './prescription-form/prescription-form.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
-import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AptformComponent } from './aptform/aptform.component';
 import { HeaderComponent } from './header/header.component';
@@ -42,7 +41,6 @@ import { MatInputModule } from '@angular/material/input';
     LoginComponent,
     PrescriptionFormComponent,
     PrescriptionListComponent,
-    HomeComponent,
     AppointmentComponent,
     AptformComponent,
     HeaderComponent,

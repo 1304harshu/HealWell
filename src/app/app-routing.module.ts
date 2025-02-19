@@ -11,6 +11,7 @@ import { MealComponent } from './meal/meal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AptformComponent } from './aptform/aptform.component';
 import { MedicineComponent } from './medicine/medicine.component';
+import { AptListComponent } from './apt-list/apt-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'diet', component: MealComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'aptform', component: AptformComponent },
+      { path: 'appointment-list', component: AptListComponent },
       { path: 'prescription-details', component: MedicineComponent }
 
     ]

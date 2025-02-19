@@ -27,7 +27,7 @@
           <div class="row">
             <div class="col-md-3">
               <label class="form-label">Name</label>
-              <select class="form-control" formControlName="name">
+              <select class="form-control" formControlName="name" (change)="populateMedDetials($event,i)">
                 <option [value]="medicine.name" *ngFor="let medicine of medList">{{medicine.name}}</option>
                 <!-- <option value="completed">Completed</option>
                 <option value="cancelled">Cancelled</option> -->
@@ -73,32 +73,8 @@
       </div>
   
       <div class="mb-3">
-        <label class="form-label">Refills</label>
-        <input type="number" class="form-control" formControlName="refills">
-      </div>
-  
-      <div class="mb-3">
         <label class="form-label">Pharmacy</label>
         <input type="text" class="form-control" formControlName="pharmacy">
-      </div>
-  
-      <div class="mb-3">
-        <label class="form-label">Doctor Notes</label>
-        <textarea class="form-control" formControlName="doctorNotes" rows="2"></textarea>
-      </div>
-  
-      <div class="mb-3">
-        <label class="form-label">Status</label>
-        <select class="form-control" formControlName="status">
-          <option value="active">Active</option>
-          <option value="completed">Completed</option>
-          <option value="cancelled">Cancelled</option>
-        </select>
-      </div>
-  
-      <div class="mb-3">
-        <label class="form-label">Date</label>
-        <input type="datetime-local" class="form-control" formControlName="date">
       </div>
   
       <!-- Submit Button -->

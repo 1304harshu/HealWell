@@ -19,11 +19,7 @@ export class PrescriptionFormComponent implements OnInit {
       instructions: ['', Validators.required],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      refills: [0, [Validators.required, Validators.min(0)]],
       pharmacy: ['', Validators.required],
-      doctorNotes: [''],
-      status: ['active', Validators.required],
-      date: ['', Validators.required],
       medications: this.fb.array([]) // Dynamic medication fields
     });
 
@@ -36,6 +32,16 @@ export class PrescriptionFormComponent implements OnInit {
   getMedicineList(){
     this.prescriptionService.getMedicineList(this.prescriptionForm.get('diagnosis')?.value).subscribe((resp)=>{
       this.medList = resp;
+    })
+  }
+
+  populateMedDetials(event: any, index:any){
+    let selectedMe= this.medList.filter(ele=>{
+      return ele.name == event.target.value
+    })
+    this.prescriptionForm.patchValue({
+      medications: {dosage: selectedMe[0].dosage}
+      
     })
   }
 

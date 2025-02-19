@@ -4,7 +4,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
-  width: 38vh;
+  // width: 38vh;
 
   input {
     width: 300px;
@@ -89,7 +89,7 @@ table {
 .approve-btn {
   background-color: #90ee90;
   color: #fff;
-  width: 5vh;
+  width: 9vh;
 
   &:hover {
     background-color: #5cb85c;
@@ -102,7 +102,7 @@ table {
 .reject-btn {
   background-color: #ff6b6b;
   color: #fff;
-  width: 5vh;
+  width: 9vh;
 
   &:hover {
     background-color: #d9534f;
